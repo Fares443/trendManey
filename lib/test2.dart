@@ -5,7 +5,7 @@ import 'package:trend_money1/test.dart';
 List<Tast1> tast1 = [
   
 
- Tast1(facebook:      'https://www.facebook.com/eg.technology1/'),
+ Tast1(facebook: 'https://www.facebook.com/eg.technology1/'),
     Tast1(facebook:   'https://www.facebook.com/Trend.Money1/'),
       Tast1(facebook: 'https://www.facebook.com/110718455014526/posts/pfbid0XL24oFB3xx5M7FmcSSL4cjXsi9DNgi1XYh88XFgBuYasSyWqwCDNypBMzSyuw6Cil/?app=fbl'),
      Tast1(facebook:'https://www.facebook.com/171156760155082/posts/pfbid0H8aJT8UN4FsHYX6jszfaTpezzk8QmyRXRrQGgXGRg7eyQKSx2qpeXEQQ3CpHhqEbl/?app=fbl'),

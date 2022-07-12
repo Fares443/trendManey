@@ -1,7 +1,6 @@
 // ignore_for_file: unused_import, depend_on_referenced_packages, avoid_print
 import 'package:trend_money1/BottomNaviga/bottomNavigationBar.dart';
 import 'package:trend_money1/Responsive/info_widget.dart';
-import 'package:device_preview/device_preview.dart';
 import '/core/constant/color.dart';
 import '/core/localization/translation.dart';
 import '/core/services/services.dart';
@@ -14,11 +13,7 @@ import 'core/localization/changelocal.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
-  runApp(DevicePreview(
-    builder: (context) {
-      return const MyApp();
-    },
-  ));
+  runApp( const MyApp());
 }
 
 

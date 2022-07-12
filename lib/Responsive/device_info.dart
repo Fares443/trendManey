@@ -3,7 +3,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:trend_money1/Responsive/device_type.dart.dart';
-import 'enums/device_type.dart';
+
 import '/Responsive/device_type.dart.dart';
 
 class DeviceInfo {
