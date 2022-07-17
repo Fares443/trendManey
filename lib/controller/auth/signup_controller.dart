@@ -1,5 +1,7 @@
-// ignore_for_file: depend_on_referenced_packages, avoid_print
+// ignore_for_file: depend_on_referenced_packages, avoid_print, non_constant_identifier_names
 
+import 'package:get_storage/get_storage.dart';
+import 'package:trend_money1/core/constant/color.dart';
 import 'package:trend_money1/core/constant/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -40,21 +42,28 @@ class SignUpControllerImp extends SignUpController {
       'password1': password1.text,
       'password2': password2.text,
     });
+    final box = GetStorage();
      isloading = false;
-   //print(response);
-    if (response['created'] =true ) {
-    
+       print(response);
+    if (response['created'] ==true ) {
+      var User = response['id'].toString();
+        await box.write('isregister', true);
+        await box.write('user', User);
+      //postgetUserinfo(User);
+      postgetUserinfo(box.read('user'));
     Get.offNamed(AppRoute.bottomNavigationBa);
-     postgetUserinfo(response['id']);
-     //Get.offNamed(AppRoute.verfiycodesignlup);
-    } else {
-   print(response);
+   
+    } else  {
+  print(response);
    print('Not not Valid');
+  Get.snackbar('', 'هذا الحساب مستخدم بالفعل',backgroundColor: AppColor.primaryColor,colorText: AppColor.backgroundcolor);
     }
    print(' Valid');
     } else {
       // ignore:
       print('Not Valid');
+   Get.snackbar('', 'خطأ في اسم المستخدم او كلمة السر',backgroundColor: AppColor.primaryColor,colorText: AppColor.backgroundcolor);
+
     }
 
 

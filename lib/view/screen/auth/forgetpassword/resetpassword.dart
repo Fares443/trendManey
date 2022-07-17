@@ -17,7 +17,7 @@ class ResetPassWord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ResePasWordControllerImp controller = Get.put(ResePasWordControllerImp());
+    ResePasWordControllerImp controller = Get.put(ResePasWordControllerImp(),permanent: true);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -53,7 +53,7 @@ class ResetPassWord extends StatelessWidget {
                vaild: (val) {
                  return validInput(val!, 5, 30, 'passwored');
               },
-              mycontroller: controller.password,
+              mycontroller: controller.repassword,
               hinttext: "اعد ادخال كلمة المرور ",
               iconData: Icons.lock_outline,
               labeltext:  "كلمة المرور",

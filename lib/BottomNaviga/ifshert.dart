@@ -1,11 +1,14 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:trend_money1/controller/data.dart';
 
-import 'package:trend_money1/screen/appBar.dart';
 import 'package:trend_money1/core/constant/color.dart';
 import 'package:trend_money1/core/constant/routes.dart';
+import 'package:trend_money1/screen/appBar.dart';
+
+DataController controller = Get.put(DataController());
 
 class Ifshert extends StatelessWidget {
   const Ifshert({Key? key}) : super(key: key);
@@ -18,7 +21,6 @@ class Ifshert extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: [
             Container(
-              // height: 500,
               width: double.infinity,
               padding: const EdgeInsets.all(15),
               child: Image.asset(
@@ -35,6 +37,7 @@ class Ifshert extends StatelessWidget {
                 color: AppColor.primaryColor,
                 onPressed: () {
                   Get.toNamed(AppRoute.vip);
+                 
                   
                 },
                 child: const Text(
@@ -45,5 +48,5 @@ class Ifshert extends StatelessWidget {
             )
           ],
         ));
-  } 
+  }
 }

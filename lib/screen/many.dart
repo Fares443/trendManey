@@ -2,6 +2,7 @@
 
 // ignore: unused_import
 import 'package:dropdown_search/dropdown_search.dart';
+import 'package:trend_money1/controller/auth/withdraw_controller.dart';
 import 'package:trend_money1/core/Function/vaildinput.dart';
 import 'package:trend_money1/core/constant/routes.dart';
 
@@ -14,7 +15,7 @@ import '/view/widget/auth/customtexttitleauth.dart';
 import '/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+WithdrawController controller2 = Get.put(WithdrawController());
 class Many extends StatefulWidget {
   const Many({Key? key}) : super(key: key);
 
@@ -35,6 +36,7 @@ class _ManyState extends State<Many> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     SignUpControllerImp controller = Get.put(SignUpControllerImp());
     return Scaffold(
       appBar: AppBar(
@@ -53,7 +55,7 @@ class _ManyState extends State<Many> {
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: Form(
-          key: controller.formstate,
+          key: controller2.formstate2,
           child: ListView(children: [
             const SizedBox(height: 20),
             const CustomTextTitleAuth(text: "عملية السحب"),
@@ -65,7 +67,7 @@ class _ManyState extends State<Many> {
               vaild: (val) {
               //  return validInput(val!, 11, 12, 'phone');
               },
-              mycontroller: controller.phone,
+              mycontroller: controller2.mobile,
               hinttext: "ادخل رقم الموبيل",
               iconData: Icons.phone_android_outlined,
               labeltext: "رقم الموبيل",
@@ -73,9 +75,9 @@ class _ManyState extends State<Many> {
             ),
             CustomTextFormAuth(
               vaild: (val) {
-               // return validInput(val!, 5, 30, 'password');
+               return validInput(val!, 5, 30, 'password');
               },
-              mycontroller: controller.password1,
+              mycontroller: controller2.pass,
               hinttext: "ادخل الكلمة المرور",
               iconData: Icons.lock_outline,
               labeltext: "كلمة المرور",
@@ -83,9 +85,9 @@ class _ManyState extends State<Many> {
             ),
             CustomTextFormAuth(
               vaild: (val) {
-                return validInput(val!, 11, 12, 'phone');
+                // return validInput(val!, 11, 12, 'phone');
               },
-              mycontroller: controller.password2,
+              mycontroller: controller2.amount,
               hinttext: "حدد قيمة السحب",
               iconData: Icons.monetization_on,
               labeltext: "المبلغ",
@@ -120,7 +122,10 @@ class _ManyState extends State<Many> {
                           ),
                         ))
                     .toList(),
-                onChanged: (item) => setState(() => select = item),
+                onChanged: (item) {
+                  setState(() => select = item);
+                  controller2.payment.text = select! ;
+                },
               ),
             ),
             const SizedBox(
@@ -129,9 +134,7 @@ class _ManyState extends State<Many> {
             CustomButtomAuth(
                 text: "اتمام",
                 onPressed: () {
-                  
-                  //  controller.goToSignIn();
-                  Get.toNamed(AppRoute.done);
+                  controller2.withdraw();
                 }),
             const SizedBox(height: 40),
           ]),

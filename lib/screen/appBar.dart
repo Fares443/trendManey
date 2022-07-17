@@ -17,6 +17,7 @@ import 'package:trend_money1/core/constant/color.dart';
             fontSize: 20),),
             backgroundColor: AppColor.primaryColor,
             centerTitle: true,
+          
 
     );
   

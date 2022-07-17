@@ -1,5 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, avoid_print, non_constant_identifier_names
 
+import 'package:get_storage/get_storage.dart';
+import 'package:trend_money1/core/constant/color.dart';
 import 'package:trend_money1/core/constant/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -30,31 +32,37 @@ class LoginControllerImp extends LoginController {
   login() async {
     var formdata = formstate.currentState;
     if (formdata!.validate()) {
+      formdata.save();
       isloading = true;
+
       var response = await crud.postRequest(linkLogin, {
         'email': email.text,
         'password': password.text,
       });
+      final box = GetStorage();
       isloading = false;
-      if (response['logged'] ==true) {
-      print('$response');
-      var User = response['id'].toString();
-         postgetUserinfo(User);
-         print(linkApi);
-    Get.offNamed(AppRoute.bottomNavigationBa);
-         
-        //Get.offNamed(AppRoute.verfiycodesignlup);
+
+      print(response);
+      if (response['logged'] == true) {
+        var User = response['id'].toString();
+        await box.write('isregister', true);
+        await box.write('user', User);
+        postgetUserinfo(box.read('user'));
+
+        Get.offAllNamed(AppRoute.bottomNavigationBa);
       } else {
-         print('ValidNot');
-        print(response);
+        Get.snackbar('', 'خطأ في اسم المستخدم او كلمة السر',
+            backgroundColor: AppColor.primaryColor,
+            colorText: AppColor.backgroundcolor);
       }
       print('Valid');
     } else {
       // ignore:
-      print('Not Valid');
+      Get.snackbar('خطأ في اسم المستخدم او كلمة السر', '',
+          backgroundColor: AppColor.primaryColor,
+          colorText: AppColor.backgroundcolor);
     }
   }
-
 
   @override
   goToSignUp() {
@@ -66,6 +74,7 @@ class LoginControllerImp extends LoginController {
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();
+    update();
   }
 
   @override

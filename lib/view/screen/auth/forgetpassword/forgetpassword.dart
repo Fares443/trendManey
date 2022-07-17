@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, unused_import
 
 import 'package:trend_money1/controller/auth/forgetpassword_controller.dart';
+import 'package:trend_money1/controller/auth/verifycode_controller.dart';
 import 'package:trend_money1/core/Function/vaildinput.dart';
 
 import '/controller/auth/signup_controller.dart';
@@ -16,10 +17,13 @@ import 'package:get/get.dart';
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     ForgetPasswoedControllerImp controller =
-        Get.put(ForgetPasswoedControllerImp());
+        Get.put(ForgetPasswoedControllerImp(),permanent: true);
+    VerifyCodePasWordControllerImp controller2 =
+    Get.put(VerifyCodePasWordControllerImp(),permanent: true);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -61,6 +65,7 @@ class ForgetPassword extends StatelessWidget {
             CustomButtomAuth(
                 text: "تأكيد",
                 onPressed: () {
+                  controller2.email = controller.email.text ;
                   controller.goToVerfiycode();
                 }),
             const SizedBox(height: 40),

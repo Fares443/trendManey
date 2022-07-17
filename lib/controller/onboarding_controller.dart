@@ -3,6 +3,7 @@
 import 'package:trend_money1/core/constant/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:trend_money1/core/services/services.dart';
 import 'package:trend_money1/data/datasource/static.dart';
 
 import '../data/datasource/static/static.dart';
@@ -16,13 +17,14 @@ class OnBoardingControllerImp extends OnBoardingController {
   late PageController pageController;
 
   int currentPage = 0;
+  //MyServices myServices =Get.find();
 
   @override
   next() {
     currentPage++;
 
     if (currentPage > onBoardingList.length - 1) {
-       Get.offAllNamed(AppRoute.login) ; 
+      Get.offAllNamed(AppRoute.login);
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);

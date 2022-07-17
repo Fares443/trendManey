@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, unrelated_type_equality_checks
 
 import 'package:flutter/material.dart';
 
@@ -26,7 +26,7 @@ class CustomTextFormAuth extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       child: TextFormField(
-        obscureText: obscureText ==null || obscureText ==false?false :true,
+        obscureText: obscureText == null || obscureText == false ? false : true,
         validator: vaild,
         controller: mycontroller,
         decoration: InputDecoration(
@@ -38,7 +38,7 @@ class CustomTextFormAuth extends StatelessWidget {
             label: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 9),
                 child: Text(labeltext)),
-            suffixIcon: InkWell(onTap:onTapIcon, child: Icon(iconData) ),
+            suffixIcon: InkWell(onTap: onTapIcon, child: Icon(iconData)),
             border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
       ),

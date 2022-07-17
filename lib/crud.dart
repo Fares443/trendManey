@@ -20,6 +20,7 @@ class Crud {
     }
   }
 
+
   postRequest(String url, Map data) async {
     await Future.delayed(const Duration(seconds: 2));
     try {

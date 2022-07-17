@@ -1,4 +1,7 @@
 //
+// ignore_for_file: prefer_typing_uninitialized_variables, avoid_print
+
+import 'package:get/get.dart';
 import 'package:trend_money1/crud.dart';
 
 ///
@@ -7,20 +10,33 @@ const String linkServerName = 'https://trend-money.tech/api';
 const String linkmembers = '$linkServerName/members/';
 const String linkSignup = '$linkServerName/signup';
 const String linkLogin = '$linkServerName/login';
-
+const String linkWithdraw = '$linkServerName/swipe/';
+const String linkForgetPassword = '$linkServerName/email/sendcode/';
+const String linkForgetPassword2 = '$linkServerName/email/checkcode/';
+const String linkForgetPassword3 = '$linkServerName/reset/password/';
+const String linkhelp = '$linkServerName/support/';
+const String linkcombletTask = '$linkServerName/tasks/complete/';
+const String linksupport= '$linkServerName/support/';
 Crud crud = Crud();
-List? linkApi = [];
+
+List linkApi = [];
+RxList data = [].obs;
+var userid;
 postgetUserinfo(String userId) async {
+  linkApi = [];
+  data.value = [];
   var response = await crud.postRequest(linkUserinfo, {
     'id': userId,
   });
-  linkApi!.add(response);
+  userid = userId;
+  if (response != false) {
+    linkApi.add(response);
+    data.add(response);
+    print(response);
+    print('value');
+  } else {
+    print('not value');
+    data.add(response);
+  }
 }
 
-List linkmembersapi = [];
-postgetmembers(String userId) async {
-  var response = await crud.postRequest(linkmembers, {
-    'id': userId,
-  });
-  linkmembersapi.add(response);
-}

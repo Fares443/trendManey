@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 
 class OnBoarding extends StatelessWidget {
   const OnBoarding({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     Get.put(OnBoardingControllerImp()) ;
@@ -18,7 +17,7 @@ class OnBoarding extends StatelessWidget {
         backgroundColor: AppColor.backgroundcolor,
         body: SafeArea(
           child: Column(children: [
-          //  const SizedBox(height: 20,),
+         const SizedBox(height: 5,),
             const Expanded(
               flex: 3,
               child: CustomSliderOnBoarding(),

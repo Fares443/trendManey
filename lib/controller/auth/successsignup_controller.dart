@@ -8,6 +8,6 @@ abstract class SuccessSignUpController extends GetxController {
 class SuccessSignUpControllerImp extends SuccessSignUpController {
   @override
   gotoPageLagin() {
-    Get.offAllNamed(AppRoute.bottomNavigationBa);
+    Get.offAllNamed(AppRoute.login);
   }
 }

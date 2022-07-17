@@ -3,21 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:trend_money1/core/constant/color.dart';
 import 'package:trend_money1/link_api.dart';
+import 'package:trend_money1/screen/method.dart';
 
 
 class ContanerPerson extends StatelessWidget {
   const ContanerPerson({
     Key? key,
   }) : super(key: key);
-// getUser(String memberName) async {
-//     var response = await http.get(Uri.parse(linkmembers));
-//     print(response);
-//           for( var r in response){
-//             if(r['Name']== memberName){
-// return r['number_of_daily_tasks'];
-//             }
-//           }
- // }
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +19,8 @@ class ContanerPerson extends StatelessWidget {
           boxShadow: const [
             BoxShadow(
                 color: Color.fromARGB(255, 142, 135, 135),
-                offset: Offset(0, 30),
-                blurRadius: 50)
+                offset: Offset(0, 15),
+                blurRadius: 15)
           ],
           color: AppColor.primaryColor,
           borderRadius: BorderRadius.circular(10)),
@@ -36,19 +28,41 @@ class ContanerPerson extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Stack(children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 5),
-            child: Container(
-           
-              child: const Text(
-                ' مستواك : VIP5',
-                style: TextStyle(
-                    fontSize: 20,
-                    color: AppColor.backgroundcolor,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Cairo'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+  Padding(
+                 padding: const EdgeInsets.only(top: 5),
+                 child: Container(
+
+                   child: const Text(
+                     ' مستواك :',
+                     style: TextStyle(
+                         fontSize: 20,
+                         color: AppColor.backgroundcolor,
+                         fontWeight: FontWeight.bold,
+                         fontFamily: 'Cairo'),
+                   ),
+                 ),
+               ),
+               const SizedBox(width: 4,),
+                         Methodmembership2(),
+             
+const Spacer(),
+
+              Container(
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: IconButton(
+                    onPressed: (){
+                      postgetUserinfo(userid);
+                    },
+                    icon:const Icon(Icons.refresh,color: Color(0xffef7d00)),
+                  ),
+                ),
               ),
-            ),
+
+            ],
           ),
           //فتره الصلاحية
           Row(
@@ -56,10 +70,10 @@ class ContanerPerson extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.bottomLeft,
-                child:  Text(
-                  // ignore: prefer_is_empty
-                  ' مهام يومية ${linkmembersapi.length > 0 ? linkmembersapi[0]['number_of_daily_tasks']:''} ',
-                  style:const  TextStyle(
+                child: const Text(
+                 
+                  ' صلى على الحبيب',
+                  style:  TextStyle(
                       fontSize: 14,
                       color: AppColor.backgroundcolor,
                       fontWeight: FontWeight.bold,

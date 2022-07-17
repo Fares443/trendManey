@@ -15,7 +15,7 @@ class Vip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBarscreen('Vip'),
+     appBar: AppBarscreen('VIP'),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView( children: [
@@ -24,8 +24,8 @@ class Vip extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        buildVip('Golden', 'سعر المهمة : 2 ', 'مهام يومية : 20 ',
-            'assets/images/golden 2.png', '2500',const Color(0xff795c22)),
+        buildVip('Golden', 'سعر المهمة : 2 ', 'مهام يومية : 34 ',
+            'assets/images/golden 2.png', '3000',const Color(0xff795c22)),
         const SizedBox(
           height: 20,
         ),
@@ -115,7 +115,7 @@ class buildVip extends StatelessWidget {
                 ),
                const SizedBox(height: 7,),
                 MaterialButton(
-                   onPressed:()=>OnPressedUrl('whatsapp://send?phone=+0201021182597'),
+                   onPressed:()=>OnPressedUrl('whatsapp://send?phone=+0201024209764'),
                   child: const CircleAvatar(
                     radius: 20,
                     backgroundColor: AppColor.primaryColor,

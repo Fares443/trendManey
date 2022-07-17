@@ -3,7 +3,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:trend_money1/core/constant/color.dart';
-import 'package:trend_money1/test2.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class builCard extends StatelessWidget {

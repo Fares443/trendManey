@@ -106,7 +106,11 @@ class _SignUpState extends State<SignUp> {
                       controller.showpassword();
                     },
                     vaild: (val) {
+                      if (val != controller.password1.text) {
+                        return 'كلمة السر لا يتطابق';
+                      }
                       return validInput(val!, 5, 30, 'password2');
+
                     },
                     mycontroller: controller.password2,
                     hinttext: 'اعد ادخال كلمةالمرور',

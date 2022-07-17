@@ -13,9 +13,14 @@ import '/view/widget/auth/textsignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     LoginControllerImp controller = Get.put(LoginControllerImp());
@@ -58,21 +63,23 @@ class Login extends StatelessWidget {
                     labeltext: " البريد الالكترونى ",
                     // mycontroller: ,
                   ),
-                 GetBuilder<LoginControllerImp>(builder: (controller)=>  CustomTextFormAuth(
-                    obscureText: controller.isshowpassword,
-                    onTapIcon: () {
-                      controller.showpassword();
-                    },
-                   
-                    vaild: (val) {
-                      return validInput(val!, 5, 30, 'password');
-                    },
-                    mycontroller: controller.password,
-                    hinttext: "ادخل  كلمة المرور",
-                    iconData: Icons.lock_outline,
-                    labeltext: " كلمةالمرور ",
-                    // mycontroller: ,
-                  ),),
+                  GetBuilder<LoginControllerImp>(
+                    builder: (controller) => CustomTextFormAuth(
+                      obscureText: controller.isshowpassword,
+                      onTapIcon: () {
+                        controller.showpassword();
+                      },
+
+                      vaild: (val) {
+                        return validInput(val!, 5, 30, 'password');
+                      },
+                      mycontroller: controller.password,
+                      hinttext: "ادخل  كلمة المرور",
+                      iconData: Icons.lock_outline,
+                      labeltext: " كلمةالمرور ",
+                      // mycontroller: ,
+                    ),
+                  ),
                   InkWell(
                     onTap: () {
                       controller.goToForgetPassword();

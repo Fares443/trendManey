@@ -18,7 +18,7 @@ class VerfiyCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     VerifyCodePasWordControllerImp controller =
-        Get.put(VerifyCodePasWordControllerImp());
+        Get.put(VerifyCodePasWordControllerImp(), permanent: true);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -39,6 +39,8 @@ class VerfiyCode extends StatelessWidget {
           const CustomTextBodyAuth(text: "الرجاءادخال رمز الرقم المرسل اليك"),
           const SizedBox(height: 15),
           OtpTextField(
+            
+            keyboardType: TextInputType .number,
             textStyle:
                 const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             fieldWidth: 50,
@@ -48,10 +50,10 @@ class VerfiyCode extends StatelessWidget {
             showFieldAsBox: true,
             onCodeChanged: (String code) {},
             onSubmit: (String verificationCode) {
+              controller.verifycode = verificationCode;
               controller.goToResetPassword();
             }, // end onSubmit
           ),
-         
         ]),
       ),
     );

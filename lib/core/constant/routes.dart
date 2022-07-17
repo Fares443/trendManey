@@ -3,8 +3,9 @@
 import 'package:trend_money1/view/screen/auth/forgetpassword/forgetpassword.dart';
 
 class AppRoute {
-  
-    static const String bottomNavigationBa = '/BottomNavigationBa';
+  static const String language = '/Language';
+  static const String splashScreen = '/SplashScreen';
+  static const String bottomNavigationBa = '/BottomNavigationBa';
   static const String many = '/Many';
   static const String verfiycodesignlup = '/VerfiyCodeSignlUp';
   static const String facebook = '/Facebook';
@@ -20,9 +21,11 @@ class AppRoute {
   static const String verfiyCode = "/verfiycode";
   static const String resetPassword = "/resetpassword";
   static const String successSignUp = "/successsignup";
-  static const String successResetPassword = "/successresetpassword";
+  static const String successResetPassword = "/SuccessResetPassword";
   static const String done = "/done";
   static const String help = "/help";
+
+
 
 
 }
