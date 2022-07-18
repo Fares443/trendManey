@@ -44,8 +44,7 @@ class SuccessResetPassword extends StatelessWidget {
             child: CustomButtomAuth(
                 text: "الذهاب الى التسجيل",
                 onPressed: () {
-                  Get.offAllNamed(AppRoute.bottomNavigationBa);
-                 // controller.gotoPageLagin();
+                  controller.gotoPageLagin();
                 }),
           ),
           const SizedBox(

@@ -26,12 +26,13 @@ class ForgetPassword extends StatelessWidget {
     Get.put(VerifyCodePasWordControllerImp(),permanent: true);
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+        actions: [ IconButton(
           icon:const Icon(Icons.highlight_remove_outlined,color: AppColor.primaryColor,size: 30),
           onPressed: () {
             Get.back();
           },
-        ),
+        ),],
+     
         centerTitle: true,
         backgroundColor: AppColor.backgroundcolor,
         elevation: 0.0,

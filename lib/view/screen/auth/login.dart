@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, unnecessary_import
 
 import 'package:trend_money1/core/Function/vaildinput.dart';
+import 'package:trend_money1/core/constant/routes.dart';
 
 import '/controller/auth/login_controller.dart';
 import '/core/constant/color.dart';
@@ -82,7 +83,8 @@ class _LoginState extends State<Login> {
                   ),
                   InkWell(
                     onTap: () {
-                      controller.goToForgetPassword();
+                     
+                    controller.goToForgetPassword();
                     },
                     child: const Text(
                       "هل نسيت كلمة السر",

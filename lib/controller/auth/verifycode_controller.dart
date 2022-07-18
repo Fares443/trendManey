@@ -33,20 +33,19 @@ class VerifyCodePasWordControllerImp extends VerifyCodePasWordController {
       'email': email,
       'code': verifycode,
     });
-    print(response);
-    print(email);
-    print(verifycode);
+    // print(response);
+    // print(email);
+    // print(verifycode);
 
     if (response['correct_code'] == true) {
       controller2.email = email;
       Get.offNamed(AppRoute.resetPassword);
       print('value');
     } else {
-
-      Get.snackbar('الرقم خاطئ', '',
+      Get.snackbar('الرقم خاطئ', 'يكتب الكود من اليمين الى الشمال',
           backgroundColor: AppColor.primaryColor,
           colorText: AppColor.backgroundcolor);
-            print('not value');
+          print('not  value');
     }
   }
 

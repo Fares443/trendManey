@@ -6,20 +6,16 @@ import 'package:get/get.dart';
 import 'package:trend_money1/controller/auth/splashscreen_controller.dart';
 
 SplashScreenController controller = Get.put(SplashScreenController());
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
-
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
-
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 3), () => controller.isregistered());
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

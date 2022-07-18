@@ -39,8 +39,6 @@ class VerfiyCode extends StatelessWidget {
           const CustomTextBodyAuth(text: "الرجاءادخال رمز الرقم المرسل اليك"),
           const SizedBox(height: 15),
           OtpTextField(
-            
-            keyboardType: TextInputType .number,
             textStyle:
                 const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             fieldWidth: 50,

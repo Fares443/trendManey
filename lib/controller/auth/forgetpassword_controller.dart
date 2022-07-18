@@ -29,19 +29,19 @@ class ForgetPasswoedControllerImp extends ForgetPasswoedController {
       var response = await crud.postRequest(linkForgetPassword, {
         'email': email.text,
       });
-
-      if (response == 'Code has been sent successfully') {
+      if (response == 'Code has been sent successfully'){
         Get.offNamed(AppRoute.verfiyCode);
+         print('Valid');
       } else {
+         print('Not Valid');
         Get.snackbar('الايميل غير مسجل في موقعنا', '',backgroundColor: AppColor.primaryColor,colorText: AppColor.backgroundcolor);
       }
       print('Valid');
-    } else {
-      // ignore:
-      Get.snackbar('الايميل غير مسجل في موقعنا', '',backgroundColor: AppColor.primaryColor,colorText: AppColor.backgroundcolor);
-    }
-    print('Not Valid');
-  }
+      } else {
+       Get.snackbar('الايميل غير مسجل في موقعنا', '',backgroundColor: AppColor.primaryColor,colorText: AppColor.backgroundcolor);
+       print('Not Valid');
+     }
+   }
 
   @override
   void onInit() {

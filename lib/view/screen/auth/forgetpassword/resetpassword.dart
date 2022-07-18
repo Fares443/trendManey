@@ -3,6 +3,7 @@
 import 'package:trend_money1/controller/auth/forgetpassword_controller.dart';
 import 'package:trend_money1/controller/auth/resetpassword_controller.dart';
 import 'package:trend_money1/core/Function/vaildinput.dart';
+import 'package:trend_money1/core/constant/routes.dart';
 
 import '/core/constant/color.dart';
 import '/view/widget/auth/custombuttonauth.dart';
@@ -17,7 +18,8 @@ class ResetPassWord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ResePasWordControllerImp controller = Get.put(ResePasWordControllerImp(),permanent: true);
+    ResePasWordControllerImp controller =
+        Get.put(ResePasWordControllerImp(), permanent: true);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -40,8 +42,8 @@ class ResetPassWord extends StatelessWidget {
             const CustomTextBodyAuth(text: "الرجاء ادخال كلمة مرور جديدة"),
             const SizedBox(height: 15),
             CustomTextFormAuth(
-               vaild: (val) {
-                   return validInput(val!, 5, 30, 'passwored');
+              vaild: (val) {
+                return validInput(val!, 5, 30, 'passwored');
               },
               mycontroller: controller.password,
               hinttext: "ادخل كلمة المرور",
@@ -50,19 +52,19 @@ class ResetPassWord extends StatelessWidget {
               // mycontroller: ,
             ),
             CustomTextFormAuth(
-               vaild: (val) {
-                 return validInput(val!, 5, 30, 'passwored');
+              vaild: (val) {
+                return validInput(val!, 5, 30, 'passwored');
               },
               mycontroller: controller.repassword,
               hinttext: "اعد ادخال كلمة المرور ",
               iconData: Icons.lock_outline,
-              labeltext:  "كلمة المرور",
+              labeltext: "كلمة المرور",
               // mycontroller: ,
             ),
             CustomButtomAuth(
                 text: "حفظ",
                 onPressed: () {
-              controller.goToSuccessResetPassword();
+                  controller.goToSuccessResetPassword();
                 }),
             const SizedBox(height: 40),
           ]),

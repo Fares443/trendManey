@@ -43,7 +43,7 @@ class ResePasWordControllerImp extends ResePasWordController {
     print(response);
 
     if (response['logged'] == true) {
-      Get.offNamed(AppRoute.successResetPassword);
+    Get.offNamed(AppRoute.successResetPassword);
         print('value');
     } else {
         print('not value');

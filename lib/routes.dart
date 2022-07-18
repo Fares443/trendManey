@@ -2,6 +2,7 @@
 
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:trend_money1/BottomNaviga/bottomNavigationBar.dart';
+
 import 'package:trend_money1/screen/Done.dart';
 import 'package:trend_money1/screen/help.dart';
 import 'package:trend_money1/screen/many.dart';
@@ -26,6 +27,7 @@ import '/view/screen/auth/signup.dart';
 import '/view/screen/onboarding.dart';
 
 List<GetPage<dynamic>>? routes = [
+
   GetPage(name: AppRoute.language, page: () => const Language()),
    GetPage(name:AppRoute.splashScreen, page: () => const SplashScreen()),
     GetPage(name: AppRoute.bottomNavigationBa, page: () =>  BottomNavigationBa()),

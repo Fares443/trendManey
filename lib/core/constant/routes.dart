@@ -2,7 +2,8 @@
 
 import 'package:trend_money1/view/screen/auth/forgetpassword/forgetpassword.dart';
 
-class AppRoute {
+class AppRoute { 
+  
   static const String language = '/Language';
   static const String splashScreen = '/SplashScreen';
   static const String bottomNavigationBa = '/BottomNavigationBa';

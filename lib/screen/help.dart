@@ -5,7 +5,6 @@ import 'package:trend_money1/screen/appBar.dart';
 import 'package:trend_money1/core/constant/color.dart';
 import 'package:trend_money1/screen/onpressedurl.dart';
 
-
 class Help extends StatelessWidget {
   const Help({Key? key}) : super(key: key);
   @override
@@ -14,7 +13,6 @@ class Help extends StatelessWidget {
         width: 350,
         child: Scaffold(
           appBar: AppBarscreen('لدعم والمساعدة'),
-         
           body: ListView(children: [
             const SizedBox(
               height: 15,
@@ -24,16 +22,22 @@ class Help extends StatelessWidget {
               fit: BoxFit.fill,
             ),
             materialButtonMenu(
-                ': التواصل مع قسم اشتراك الباقات', '/whatsappMenu'),
+                ': التواصل مع قسم اشتراك الباقات', '/whatsappMenu', () {
+              OnPressedUrl('whatsapp://send?phone=+0201024209764');
+            }),
             const SizedBox(
               height: 10,
             ),
-            materialButtonMenu(
-                ': التواصل مع قسم اثبات المهام', '/whatsappMenu'),
+            materialButtonMenu(': التواصل مع قسم اثبات المهام', '/whatsappMenu',
+                () {
+              OnPressedUrl('whatsapp://send?phone=+0201021559201');
+            }),
             const SizedBox(
               height: 10,
             ),
-            materialButtonMenu(': التواصل مع قسم الشكاوي', '/whatsappMenu'),
+            materialButtonMenu(': التواصل مع قسم الشكاوي', '/whatsappMenu', () {
+              OnPressedUrl('whatsapp://send?phone=+0201021559201');
+            }),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 50),
               child: Row(
@@ -41,7 +45,8 @@ class Help extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                      onPressed:()=> OnPressedUrl('https://www.facebook.com/Trend.Money1'),
+                    onPressed: () =>
+                        OnPressedUrl('https://www.facebook.com/Trend.Money1'),
                     icon: Image.asset(
                       'assets/images/facebookMenu.png',
                       fit: BoxFit.cover,
@@ -49,9 +54,12 @@ class Help extends StatelessWidget {
                     ),
                     iconSize: 50,
                   ),
-               SizedBox(width: 30,),
+                  SizedBox(
+                    width: 30,
+                  ),
                   IconButton(
-                    onPressed:()=> OnPressedUrl('https://www.instagram.com/trend.money1/'),
+                    onPressed: () =>
+                        OnPressedUrl('https://www.instagram.com/trend.money1/'),
                     icon: Image.asset(
                       'assets/images/instagramMenu.png',
                       height: 80,
@@ -66,15 +74,18 @@ class Help extends StatelessWidget {
         ));
   }
 
-  Widget materialButtonMenu(String title, suptitle) {
+  Widget materialButtonMenu(
+      String title, suptitle, void Function()? onPressed) {
     return MaterialButton(
-      shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(40) ),
-       onPressed:()=>OnPressedUrl('whatsapp://send?phone=+0201021559201'),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      onPressed: onPressed,
       child: Card(
         elevation: 5,
-              shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(22) ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
         child: ListTile(
-          leading: Image.asset('assets/images/whatsappMenu.png',),
+          leading: Image.asset(
+            'assets/images/whatsappMenu.png',
+          ),
           title: Text(
             title,
             style: const TextStyle(

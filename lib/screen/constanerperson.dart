@@ -72,7 +72,7 @@ const Spacer(),
                 alignment: Alignment.bottomLeft,
                 child: const Text(
                  
-                  ' صلى على الحبيب',
+                  ' وفى السماء رزقكم وما توعدون ',
                   style:  TextStyle(
                       fontSize: 14,
                       color: AppColor.backgroundcolor,
