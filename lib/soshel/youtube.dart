@@ -12,8 +12,8 @@ import 'package:trend_money1/core/constant/color.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:convert';
 import 'package:http/http.dart ' as http;
-import 'package:trend_money1/BottomNaviga/person.dart';//
-import 'package:trend_money1/core/constant/routes.dart';//
+import 'package:trend_money1/BottomNaviga/person.dart';
+import 'package:trend_money1/core/constant/routes.dart';
 final box = GetStorage();
 
 class Youtube extends StatefulWidget {

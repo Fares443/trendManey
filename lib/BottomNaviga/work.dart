@@ -39,6 +39,9 @@ class Work extends StatelessWidget {
       backgroundColor: AppColor.primaryColor,
       body: ListView(
         children: [
+            const SizedBox(
+                        height: 15,
+                      ),
          Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
@@ -50,6 +53,7 @@ class Work extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    
                     children: [
                       const SizedBox(
                         height: 15,

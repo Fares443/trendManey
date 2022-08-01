@@ -17,7 +17,7 @@ class OnBoarding extends StatelessWidget {
         backgroundColor: AppColor.backgroundcolor,
         body: SafeArea(
           child: Column(children: [
-         const SizedBox(height: 5,),
+         const SizedBox(height: 5,width: 10),
             const Expanded(
               flex: 3,
               child: CustomSliderOnBoarding(),

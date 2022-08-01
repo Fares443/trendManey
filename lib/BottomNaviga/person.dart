@@ -50,17 +50,21 @@ class Person extends StatelessWidget {
             )
           : Padding(
               padding: const EdgeInsets.only(left: 25, right: 25),
-              child: ListView(children: [
+              child: ListView(
+                
+                children: [
                 //مستواك VIP
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
-
+              
                 const ContanerPerson(),
                 const SizedBox(
                   height: 30,
                 ),
                 Column(
+                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const SizedBox(
                       height: 10,
@@ -97,13 +101,16 @@ class Person extends StatelessWidget {
                     ),
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           const SizedBox(
                             height: 10,
                           ),
+                          
                           MethodButtonPerson('سحب', () {
                             Get.toNamed(AppRoute.many);
                           }),
+                           
                           MethodButtonPerson('الدعم والمساعدة', () {
                             Get.toNamed(AppRoute.help);
                           }),

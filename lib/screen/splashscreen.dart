@@ -53,14 +53,14 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontSize: 30.0,
                     ),
                   ),
-                  // const Text(
-                  //   'Make Your Money',
-                  //   textAlign: TextAlign.center,
-                  //   style: TextStyle(
-                  //     color: Colors.black,
-                  //     fontSize: 15.0,
-                  //   ),
-                  // ),
+                const Text(
+                  'Make Your Money',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 15.0,
+                  ),
+                ),
                 ],
               ),
             ),

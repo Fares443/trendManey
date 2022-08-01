@@ -1,8 +1,8 @@
 // ignore_for_file: depend_on_referenced_packages, unnecessary_import
 
-import 'package:trend_money1/core/Function/vaildinput.dart';
-import 'package:trend_money1/core/constant/routes.dart';
 
+
+import 'package:trend_money1/core/Function/vaildinput.dart';
 import '/controller/auth/login_controller.dart';
 import '/core/constant/color.dart';
 import '/view/widget/auth/custombuttonauth.dart';
@@ -27,6 +27,7 @@ class _LoginState extends State<Login> {
     LoginControllerImp controller = Get.put(LoginControllerImp());
 
     return Scaffold(
+   
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColor.backgroundcolor,
@@ -48,7 +49,7 @@ class _LoginState extends State<Login> {
                 child: ListView(children: [
                   const LogoAuth(),
                   const SizedBox(height: 20),
-                  const CustomTextTitleAuth(text: "اهلا بيك"),
+                  const CustomTextTitleAuth(text: "اهلا بيكم"),
                   const SizedBox(height: 10),
                   const CustomTextBodyAuth(
                       text:

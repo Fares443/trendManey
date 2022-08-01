@@ -19,6 +19,9 @@ class Vip extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView( children: [
+           const SizedBox(
+          height: 20,
+        ),
           buildVip('Silver', 'سعر المهمة : 1 ', 'مهام يومية : 10 ',
               'assets/images/سيلفر شفاف1.png', '500',const Color.fromARGB(255, 163, 163, 161)),
         const SizedBox(

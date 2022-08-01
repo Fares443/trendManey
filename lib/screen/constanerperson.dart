@@ -74,7 +74,7 @@ const Spacer(),
                  
                   ' وفى السماء رزقكم وما توعدون ',
                   style:  TextStyle(
-                      fontSize: 14,
+                      fontSize: 11,
                       color: AppColor.backgroundcolor,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Cairo'),
@@ -87,7 +87,7 @@ const Spacer(),
                   Container(
                     alignment: Alignment.bottomRight,
                     child: const Text(
-                      '   فتره صلاحية العضوية',
+                      'فتره الصلاحية ',
                       style: TextStyle(
                           fontSize: 14,
                           color: AppColor.backgroundcolor,

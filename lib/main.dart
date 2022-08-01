@@ -1,4 +1,5 @@
-// ignore_for_file: depend_on_referenced_packages, must_be_immutable
+// ignore_for_file: depend_on_referenced_packages, must_be_immutable, unused_import
+import 'package:path/path.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:trend_money1/Responsive/info_widget.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "PlayfairDisplay",
         textTheme: const TextTheme(
+          
             headline1: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,

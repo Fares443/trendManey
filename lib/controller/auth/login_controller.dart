@@ -1,13 +1,13 @@
 // ignore_for_file: depend_on_referenced_packages, avoid_print, non_constant_identifier_names
 
 import 'package:get_storage/get_storage.dart';
+import 'package:toast/toast.dart';
 import 'package:trend_money1/core/constant/color.dart';
 import 'package:trend_money1/core/constant/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:trend_money1/crud.dart';
 import 'package:trend_money1/link_api.dart';
-
 Crud crud = Crud();
 
 abstract class LoginController extends GetxController {
@@ -30,7 +30,11 @@ class LoginControllerImp extends LoginController {
 
   @override
   login() async {
+    
     var formdata = formstate.currentState;
+    if(!await crud.checkConnection()){
+      Toast.show("not connected Internet", duration: Toast.lengthShort, gravity:  Toast.bottom);
+    }
     if (formdata!.validate()) {
       formdata.save();
       isloading = true;
