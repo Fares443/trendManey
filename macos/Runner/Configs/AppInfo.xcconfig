@@ -8,7 +8,7 @@
 PRODUCT_NAME = TREND MONEY;
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = at.egtech.trendmoney1;
+PRODUCT_BUNDLE_IDENTIFIER = egtech.trendmoney111;
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2022 com.example. All rights reserved.
